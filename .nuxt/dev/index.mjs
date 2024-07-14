@@ -178,7 +178,9 @@ const _inlineRuntimeConfig = {
         "baseURL": "/api/_content"
       },
       "navigation": {
-        "fields": []
+        "fields": [
+          "layout"
+        ]
       },
       "tags": {
         "p": "prose-p",
@@ -208,7 +210,16 @@ const _inlineRuntimeConfig = {
       },
       "highlight": false,
       "wsUrl": "ws://localhost:4000/",
-      "documentDriven": false,
+      "documentDriven": {
+        "page": true,
+        "navigation": true,
+        "surround": true,
+        "globals": {},
+        "layoutFallbacks": [
+          "theme"
+        ],
+        "injectPage": true
+      },
       "host": "",
       "trailingSlash": false,
       "search": "",
@@ -289,10 +300,12 @@ const _inlineRuntimeConfig = {
       "json": true
     },
     "navigation": {
-      "fields": []
+      "fields": [
+        "layout"
+      ]
     },
     "contentHead": true,
-    "documentDriven": false,
+    "documentDriven": true,
     "respectPathCase": false,
     "experimental": {
       "clientDB": false,

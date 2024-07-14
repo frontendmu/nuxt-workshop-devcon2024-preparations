@@ -131,7 +131,7 @@ declare module 'nuxt/schema' {
       },
 
       navigation: {
-         fields: Array<any>,
+         fields: Array<string>,
       },
 
       contentHead: boolean,
@@ -248,7 +248,7 @@ declare module 'nuxt/schema' {
       },
 
       navigation: {
-         fields: Array<any>,
+         fields: Array<string>,
       },
 
       tags: {
@@ -305,7 +305,19 @@ declare module 'nuxt/schema' {
 
       wsUrl: string,
 
-      documentDriven: boolean,
+      documentDriven: {
+         page: boolean,
+
+         navigation: boolean,
+
+         surround: boolean,
+
+         globals: any,
+
+         layoutFallbacks: Array<string>,
+
+         injectPage: boolean,
+      },
 
       host: string,
 

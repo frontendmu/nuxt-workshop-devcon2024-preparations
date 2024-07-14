@@ -90,13 +90,13 @@
         "../node_modules/.pnpm/nuxt@3.12.3_@parcel+watcher@2.4.1_@types+node@20.14.10_ioredis@5.4.1_magicast@0.3.4_rollup@4._rycpt3xj4kr5wwdxzdxdo5qws4/node_modules/nuxt/dist/app/compat/vue-demi"
       ],
       "#mdc-configs": [
-        "./mdc-configs.mjs"
+        "./mdc-configs"
       ],
       "#mdc-highlighter": [
-        "./mdc-highlighter.mjs"
+        "./mdc-highlighter"
       ],
       "#mdc-imports": [
-        "./mdc-imports.mjs"
+        "./mdc-imports"
       ],
       "#vue-router": [
         "../node_modules/.pnpm/vue-router@4.4.0_vue@3.4.31/node_modules/vue-router"

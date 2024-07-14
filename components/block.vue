@@ -1,5 +1,7 @@
 <template>
     <section>
+        <BlockHeader :title="title" :category="category"/>
+
         <div class="grid grid-cols-[1fr,auto] items-center">
             <div class="flex min-w-0">
                 <h2 class="truncate text-base font-medium leading-7 text-slate-900"><a>{{ title || 'block name' }}</a></h2>
@@ -31,33 +33,28 @@
         </div>
         <div class="mt-6 w-full overflow-hidden rounded-lg ring-1 ring-slate-900/10">
             <div class="flex items-center justify-center bg-white p-8" v-if="tab === 'preview'">
-                {{ X.template }}
-
                 <slot name="preview">preview</slot>
             </div>
-            <div class="prose flex items-center justify-center bg-white p-8" v-if="tab === 'code'">
-                <pre>
-                    <slot name="code">code</slot>
-
-
-                </pre>
+            <div class="prose bg-gray-200 flex p-8" v-if="tab === 'code'">
+<pre>
+<code class="language-html"><slot name="code">code</slot></code>
+</pre>
             </div>
         </div>
     </section>
 </template>
 
 <script setup lang="ts">
-import X from '../components/blocks/card-one.vue'
 const tabs = ['preview', 'code']
 const tab = ref('preview')
 
-console.log(X)
 
 const changeTab = (name: string) => {
     tab.value = name
 }
 const props = defineProps<{
     title: string
+    category?: string
 }>()
 
 const slots = defineSlots<{

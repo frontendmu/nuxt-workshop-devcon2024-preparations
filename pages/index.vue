@@ -1,4 +1,5 @@
 <template>
+  <NuxtLayout>
   <div class="mt-10 space-y-24 pb-px">
     <Block title="Card One" category="card">
       <template #code>
@@ -117,4 +118,5 @@
       </template>
     </Block>
   </div>
+  </NuxtLayout>
 </template>

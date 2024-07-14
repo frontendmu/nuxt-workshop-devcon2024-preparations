@@ -1,0 +1,9 @@
+{
+  "_hash": "FO5KlDnM7h",
+  "project": {
+    "rootDir": "/workspaces/nuxt-workshop-devcon2024-preparations"
+  },
+  "versions": {
+    "nuxt": "3.12.3"
+  }
+}

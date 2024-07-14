@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white px-4 py-5 sm:px-6 space-y-4 rounded-md">
+     <div class="bg-white px-4 py-5 sm:px-6 space-y-4 rounded-md">
         <div class="flex justify-between text-black">
           <div class="flex space-x-3">
             <div class="flex items-center justify-center w-6">

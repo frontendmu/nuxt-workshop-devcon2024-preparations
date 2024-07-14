@@ -6,27 +6,6 @@ declare module 'nitropack' {
     '/__nuxt_error': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/nuxt@3.12.3_@parcel+watcher@2.4.1_@types+node@20.14.10_ioredis@5.4.1_magicast@0.3.4_rollup@4._rycpt3xj4kr5wwdxzdxdo5qws4/node_modules/nuxt/dist/core/runtime/nitro/renderer').default>>>>
     }
-    '/api/_content/query/:qid/**:params': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.13.1_ioredis@5.4.1_magicast@0.3.4_nuxt@3.12.3_@parcel+watcher@2.4.1_@types+no_4iaqpkuqd3vzvbeelyjawaatte/node_modules/@nuxt/content/dist/runtime/server/api/query').default>>>>
-    }
-    '/api/_content/query/:qid': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.13.1_ioredis@5.4.1_magicast@0.3.4_nuxt@3.12.3_@parcel+watcher@2.4.1_@types+no_4iaqpkuqd3vzvbeelyjawaatte/node_modules/@nuxt/content/dist/runtime/server/api/query').default>>>>
-    }
-    '/api/_content/query': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.13.1_ioredis@5.4.1_magicast@0.3.4_nuxt@3.12.3_@parcel+watcher@2.4.1_@types+no_4iaqpkuqd3vzvbeelyjawaatte/node_modules/@nuxt/content/dist/runtime/server/api/query').default>>>>
-    }
-    '/api/_content/cache.json': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.13.1_ioredis@5.4.1_magicast@0.3.4_nuxt@3.12.3_@parcel+watcher@2.4.1_@types+no_4iaqpkuqd3vzvbeelyjawaatte/node_modules/@nuxt/content/dist/runtime/server/api/cache').default>>>>
-    }
-    '/api/_content/navigation/:qid/**:params': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.13.1_ioredis@5.4.1_magicast@0.3.4_nuxt@3.12.3_@parcel+watcher@2.4.1_@types+no_4iaqpkuqd3vzvbeelyjawaatte/node_modules/@nuxt/content/dist/runtime/server/api/navigation').default>>>>
-    }
-    '/api/_content/navigation/:qid': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.13.1_ioredis@5.4.1_magicast@0.3.4_nuxt@3.12.3_@parcel+watcher@2.4.1_@types+no_4iaqpkuqd3vzvbeelyjawaatte/node_modules/@nuxt/content/dist/runtime/server/api/navigation').default>>>>
-    }
-    '/api/_content/navigation': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.13.1_ioredis@5.4.1_magicast@0.3.4_nuxt@3.12.3_@parcel+watcher@2.4.1_@types+no_4iaqpkuqd3vzvbeelyjawaatte/node_modules/@nuxt/content/dist/runtime/server/api/navigation').default>>>>
-    }
   }
 }
 export {}

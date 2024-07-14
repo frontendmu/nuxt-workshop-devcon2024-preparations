@@ -1,6 +1,6 @@
 <template>
   <div class="mt-10 space-y-24 pb-px">
-    <Block title="Simple Card" category="card">
+    <Block title="Card One" category="card">
       <template #code>
         &lt;template&gt;
           &lt;CardOne /&gt;
@@ -10,14 +10,34 @@
         <CardOne />
       </template>
     </Block>
-    <Block title="Extended Card" category="card">
+    <Block title="Card two" category="card">
       <template #code>
         &lt;template&gt;
           &lt;CardOne /&gt;
         &lt;/template&gt;       
       </template>
       <template #preview>
-        <CardOne />
+        <CardTwo />
+      </template>
+    </Block>
+    <Block title="Card three" category="card">
+      <template #code>
+        &lt;template&gt;
+          &lt;CardOne /&gt;
+        &lt;/template&gt;       
+      </template>
+      <template #preview>
+        <CardTwo />
+      </template>
+    </Block>
+    <Block title="Card four" category="card">
+      <template #code>
+        &lt;template&gt;
+          &lt;CardOne /&gt;
+        &lt;/template&gt;       
+      </template>
+      <template #preview>
+        <CardTwo />
       </template>
     </Block>
   </div>

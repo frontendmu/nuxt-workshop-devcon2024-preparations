@@ -1,0 +1,1 @@
+# nuxt-workshop-devcon2024-preparations

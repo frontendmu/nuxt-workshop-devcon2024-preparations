@@ -31,11 +31,14 @@
         </div>
         <div class="mt-6 w-full overflow-hidden rounded-lg ring-1 ring-slate-900/10">
             <div class="flex items-center justify-center bg-white p-8" v-if="tab === 'preview'">
+                {{ X.template }}
+
                 <slot name="preview">preview</slot>
             </div>
             <div class="prose flex items-center justify-center bg-white p-8" v-if="tab === 'code'">
-                <slot name="code">code</slot>
                 <pre>
+                    <slot name="code">code</slot>
+
 
                 </pre>
             </div>
@@ -44,8 +47,11 @@
 </template>
 
 <script setup lang="ts">
+import X from '../components/blocks/card-one.vue'
 const tabs = ['preview', 'code']
 const tab = ref('preview')
+
+console.log(X)
 
 const changeTab = (name: string) => {
     tab.value = name

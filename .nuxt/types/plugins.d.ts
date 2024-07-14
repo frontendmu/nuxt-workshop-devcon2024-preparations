@@ -16,6 +16,7 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../node_modules/.pnpm/nuxt@3.12.3_@parcel+watcher@2.4.1_@types+node@20.14.10_ioredis@5.4.1_magicast@0.3.4_rollup@4._rycpt3xj4kr5wwdxzdxdo5qws4/node_modules/nuxt/dist/app/plugins/router").default> &
   InjectionType<typeof import("../../node_modules/.pnpm/@nuxt+devtools@1.3.9_rollup@4.18.1_vite@5.3.3_@types+node@20.14.10_terser@5.31.2_/node_modules/@nuxt/devtools/dist/runtime/plugins/devtools.server").default> &
   InjectionType<typeof import("../../node_modules/.pnpm/@nuxt+devtools@1.3.9_rollup@4.18.1_vite@5.3.3_@types+node@20.14.10_terser@5.31.2_/node_modules/@nuxt/devtools/dist/runtime/plugins/devtools.client").default> &
+  InjectionType<typeof import("../../node_modules/.pnpm/@nuxt+content@2.13.1_ioredis@5.4.1_magicast@0.3.4_nuxt@3.12.3_@parcel+watcher@2.4.1_@types+no_4iaqpkuqd3vzvbeelyjawaatte/node_modules/@nuxt/content/dist/runtime/plugins/ws").default> &
   InjectionType<typeof import("../../node_modules/.pnpm/nuxt@3.12.3_@parcel+watcher@2.4.1_@types+node@20.14.10_ioredis@5.4.1_magicast@0.3.4_rollup@4._rycpt3xj4kr5wwdxzdxdo5qws4/node_modules/nuxt/dist/app/plugins/dev-server-logs").default> &
   InjectionType<typeof import("../../node_modules/.pnpm/nuxt@3.12.3_@parcel+watcher@2.4.1_@types+node@20.14.10_ioredis@5.4.1_magicast@0.3.4_rollup@4._rycpt3xj4kr5wwdxzdxdo5qws4/node_modules/nuxt/dist/app/plugins/check-if-layout-used").default>
 

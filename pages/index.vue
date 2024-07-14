@@ -1,33 +1,50 @@
+<script setup lang="ts">
+import { useClipboard } from '@vueuse/core'
+
+const codeRef1 = ref<string>(
+`&lt;div
+  class=&quot;flex flex-col justify-between bg-blue-950 text-white p-4 rounded-md w-full&quot;
+&gt;
+  &lt;div class=&quot;flex justify-between w-full&quot;&gt;
+    &lt;div class=&quot;text-xl font-bold&quot;&gt;Flic en Flac&lt;/div&gt;
+    &lt;div class=&quot;w-6&quot;&gt;
+      &lt;IconCandle /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;flex justify-between items-end&quot;&gt;
+    &lt;div class=&quot;space-y-2&quot;&gt;
+      &lt;p class=&quot;font-light max-w-3xl&quot;&gt;
+        Poste De Police, Loday Lane, Flic En Flac Road, Residence Des
+        Peupliers Et Residence Gold Coast
+      &lt;/p&gt;
+      &lt;div class=&quot;text-sm&quot;&gt;8 HOURS AGO FROM 08:30 TO 15:30&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p class=&quot;max-w-[150px] text-right&quot;&gt;Power will resume in 34m 6s&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;`);
+
+const { text, copy, copied, isSupported } = useClipboard({ source: codeRef1.value })
+
+function copyText(codeString: string) {
+  const decodedString = codeString.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, "\"").replace(/&amp;/g, "&")
+  copy(decodedString)
+}
+</script>
+
 <template>
   <NuxtLayout>
   <div class="mt-10 space-y-24 pb-px">
-    <Block title="Card One" category="card">
-      <template #code>
-        &lt;div
-        class=&quot;flex flex-col justify-between bg-blue-950 text-white p-4 rounded-md w-full&quot;
-      &gt;
-        &lt;div class=&quot;flex justify-between w-full&quot;&gt;
-          &lt;div class=&quot;text-xl font-bold&quot;&gt;Flic en Flac&lt;/div&gt;
-          &lt;div class=&quot;w-6&quot;&gt;
-            &lt;IconCandle /&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;flex justify-between items-end&quot;&gt;
-          &lt;div class=&quot;space-y-2&quot;&gt;
-            &lt;p class=&quot;font-light max-w-3xl&quot;&gt;
-              Poste De Police, Loday Lane, Flic En Flac Road, Residence Des
-              Peupliers Et Residence Gold Coast
-            &lt;/p&gt;
-            &lt;div class=&quot;text-sm&quot;&gt;8 HOURS AGO FROM 08:30 TO 15:30&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;p class=&quot;max-w-[150px] text-right&quot;&gt;Power will resume in 34m 6s&lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;   
+    <Block title="Card One" category="card" class="relative">
+      
+      <template #code >
+        <button class="absolute border bg-green-500 top-[150px] right-[20px]" @click="(event) => copyText(codeRef1)"><span v-if="copied">Copied!</span>📋</button>
+        <div v-html="codeRef1" class="contents"></div>
       </template>
       <template #preview>
         <CardOne />
       </template>
     </Block>
+    
     <Block title="Card two" category="card">
       <template #code>
         &lt;div class=&quot;bg-white px-4 py-5 sm:px-6 space-y-4 rounded-md&quot;&gt;

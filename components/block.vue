@@ -1,10 +1,10 @@
 <template>
     <section>
-        <BlockHeader :title="title" :category="category"/>
+        
 
         <div class="grid grid-cols-[1fr,auto] items-center">
             <div class="flex min-w-0">
-                <h2 class="truncate text-base font-medium leading-7 text-slate-900"><a>{{ title || 'block name' }}</a></h2>
+                <BlockHeader :title="title" :category="category"/>
             </div>
             <div class="ml-6 flex items-center">
                 <div class="flex space-x-1 rounded-lg bg-slate-100 p-0.5" role="tablist" aria-orientation="horizontal">

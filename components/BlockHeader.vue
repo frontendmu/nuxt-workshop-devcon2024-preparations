@@ -1,6 +1,6 @@
 <template>
-	<div class="flex flex-col">
-		<h1 class="mt-3 text-3xl font-extrabold tracking-tight text-slate-900">{{ title }}</h1>
+	<div class="flex flex-col prose">
+		<h2>{{ title }}</h2>
 		<nav aria-label="Breadcrumbs" class="order-first flex space-x-2 text-sm font-semibold"><a
 				class="text-slate-500 hover:text-slate-600">Workshop</a>
 			<div aria-hidden="true" class="select-none text-slate-400" v-if="category">/</div>

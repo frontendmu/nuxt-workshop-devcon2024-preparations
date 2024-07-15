@@ -3,4 +3,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss"],
+  /// tailwind typography
+  tailwindcss: {
+    config: {
+      plugins: [require('@tailwindcss/typography')],
+    },
+  },
 })

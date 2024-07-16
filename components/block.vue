@@ -37,12 +37,15 @@
                 <slot name="preview">preview</slot>
             </div>
             <div class="prose bg-gray-200 flex p-8 relative" v-if="tab === 'code'">
-                <button class="absolute border border-2 border-slate-500 rounded p-1 top-[72px] right-[48px] bg-slate-900/70 z-50 flex transition-all text-slate-300" @click="() => copyText(props.content || '')">
+                <button
+                    class="absolute border border-2 border-slate-500 rounded p-1 top-[72px] right-[48px] bg-slate-900/70 z-50 flex transition-all text-slate-300"
+                    @click="() => copy(props.content || '')"
+                >
                     <span v-if="copied" class="px-2 font-semibold">Copied!</span>
                     <span>📋</span>
                 </button>
 <pre class="relative">
-<code class="language-html" v-html="props.content"></code>
+<code class="language-html" v-text="props.content"></code>
 </pre>
             </div>
         </div>
@@ -67,8 +70,7 @@ const props = defineProps<{
 const { copy, copied, } = useClipboard({ source: props.content, copiedDuring: 3000 },)
 
 function copyText(codeString: string) {
-  const decodedString = codeString.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, "\"").replace(/&amp;/g, "&")
-  copy(decodedString)
+  copy(codeString)
 }
 
 const slots = defineSlots<{

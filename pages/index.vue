@@ -42,7 +42,9 @@
         <!-- Step 12 - Let's create a card component or pick from the list -->
         <li>
           <h2>Let's create a card component or pick from the list</h2>
-           <StepCards />
+           <div class="grid gap-y-20">
+             <StepCards />
+           </div>
         </li>
         
         <!-- Step 13 - Let's add an indicator if power is off already or not -->

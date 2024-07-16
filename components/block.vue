@@ -32,12 +32,17 @@
             </div>
         </div>
         <div class="mt-6 w-full overflow-hidden rounded-lg ring-1 ring-slate-900/10">
-            <div class="flex items-center justify-center bg-white p-8" v-if="tab === 'preview'">
+            <div class="flex items-center justify-center bg-white p-8 relative" v-if="tab === 'preview'">
+
                 <slot name="preview">preview</slot>
             </div>
-            <div class="prose bg-gray-200 flex p-8" v-if="tab === 'code'">
-<pre>
-<code class="language-html"><slot name="code">code</slot></code>
+            <div class="prose bg-gray-200 flex p-8 relative" v-if="tab === 'code'">
+                <button class="absolute border border-2 border-slate-500 rounded p-1 top-[72px] right-[48px] bg-slate-900/70 z-50 flex transition-all text-slate-300" @click="() => copyText(props.content || '')">
+                    <span v-if="copied" class="px-2 font-semibold">Copied!</span>
+                    <span>📋</span>
+                </button>
+<pre class="relative">
+<code class="language-html" v-html="props.content"></code>
 </pre>
             </div>
         </div>
@@ -45,9 +50,10 @@
 </template>
 
 <script setup lang="ts">
+import { useClipboard } from '@vueuse/core'
+
 const tabs = ['preview', 'code']
 const tab = ref('preview')
-
 
 const changeTab = (name: string) => {
     tab.value = name
@@ -55,7 +61,15 @@ const changeTab = (name: string) => {
 const props = defineProps<{
     title: string
     category?: string
+    content?: string
 }>()
+
+const { copy, copied, } = useClipboard({ source: props.content, copiedDuring: 3000 },)
+
+function copyText(codeString: string) {
+  const decodedString = codeString.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, "\"").replace(/&amp;/g, "&")
+  copy(decodedString)
+}
 
 const slots = defineSlots<{
     preview: () => VNode,

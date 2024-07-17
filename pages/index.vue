@@ -4,7 +4,7 @@
 
 <template>
   <NuxtLayout>
-    <div class="prose">
+    <div class="prose lg:min-w-[960px]">
       <h1>Welcome to Nuxt Workshop by frontend.mu</h1>
       <p>This is a workshop to learn Nuxt.js</p>
       <ol class="mt-10 space-y-24 pb-px">
@@ -48,6 +48,12 @@
         </li>
         
         <!-- Step 13 - Let's add an indicator if power is off already or not -->
+
+        <!-- <li>
+          <div>
+            <IconBulb /> 
+          </div>
+        </li> -->
 
 
       </ol>

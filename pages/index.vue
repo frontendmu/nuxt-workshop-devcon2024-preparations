@@ -1,5 +1,19 @@
-<script setup lang="ts">
 
+<script setup lang="ts">
+const step9Script = ref(
+  `const outages = await fetchJson()
+const { today } = outages
+for (const outage of today) {
+  console.log(outage)
+}`
+)
+
+const step9Template = ref(
+`<ul>
+  <li v-for="outage of today" :key="outage.id">
+    <pre>{{ outage }}</pre>  
+  </li> 
+</ul>`)
 </script>
 
 <template>
@@ -125,6 +139,15 @@ async function fetchJson(url = API_ENDPOINT) {
             Let's loop on the data
           </h2>
           <p>Display all the outages for today on the page by accessing the correct key</p>
+
+<pre>
+// In the script tag
+<code v-text="step9Script"></code>
+</pre>
+<pre>
+// In the template tag
+<code v-text="step9Template"></code>
+</pre>
          </li>
 
         <!-- Step 12 - Let's create a card component or pick from the list -->

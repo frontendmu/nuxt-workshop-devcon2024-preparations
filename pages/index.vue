@@ -62,25 +62,25 @@ const step11OutageTemplate = ref(
   ` <div
     class="flex flex-col justify-between bg-blue-950 text-white p-4 rounded-md w-full"
   >
-    <div class="flex justify-between w-full">
-      <div class="text-xl font-bold">{{ props.outage.locality }}</div>
-      <div class="w-6">
-        <!-- todo: have the candle <IconCandle /> -->
-        🕯️
-      </div>
+  <div class="flex justify-between w-full">
+    <div class="text-xl font-bold">{{ props.outage.locality }}</div>
+    <div class="w-6">
+      <!-- todo: have the candle <IconCandle /> -->
+      🕯️
     </div>
+  </div>
 
-    <div class="flex justify-between items-end">
-      <div class="space-y-2">
-        <p class="font-light max-w-3xl">
-          {{ props.outage.streets }}
-        </p>
-        <div class="text-sm">
-          {{ props.outage.date }}
-        </div>
+  <div class="flex justify-between items-end">
+    <div class="space-y-2">
+      <p class="font-light max-w-3xl">
+        {{ props.outage.streets }}
+      </p>
+      <div class="text-sm">
+        {{ props.outage.date }}
       </div>
     </div>
-  </div>`
+  </div>
+</div>`
 )
 
 const step12OutageScript = ref(

@@ -21,6 +21,7 @@ const step9Template = ref(
     <div class="prose lg:min-w-[960px]">
       <h1>Welcome to Nuxt Workshop by frontend.mu</h1>
       <p>This is a workshop to learn <a href="https://nuxt.com/">Nuxt.js</a></p>
+      <p><a href="https://discord.gg/fVtrXE4M">Join our discord channel</a> for two way comms!</p>
       <ol class="mt-10 space-y-24 pb-px">
 
         <!-- Step 1 - Go on GitHub and login -->

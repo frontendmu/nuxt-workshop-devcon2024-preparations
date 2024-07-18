@@ -2,8 +2,10 @@
   <div class="flex flex-col justify-between bg-blue-950 text-white p-4 rounded-md w-full">
     <div class="flex justify-between w-full">
       <div class="text-xl font-bold">Flic en Flac</div>
-      <div class="w-6">
-        <IconCandle />
+      <div class="w-6 h-6 relative">
+        <div class="absolute inset-0">
+          <div class="sr-only">indicator here</div>
+        </div>
       </div>
     </div>
     <div class="flex justify-between items-end">

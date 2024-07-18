@@ -39,6 +39,8 @@
   height: 80%;
   align-self: flex-end;
   animation: blink 0.1s infinite;
+  transform: scale(0.2);
+  transform-origin: center top;
 }
 .wick {
   position: absolute;

@@ -314,6 +314,7 @@ async function fetchJson(url = API_ENDPOINT) {
          <li>
           <h2>Pick some on/off indicators from this list</h2>
           <p></p>
+          <StepIndicators />
          </li>
       </ol>
     </div>

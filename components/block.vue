@@ -59,12 +59,17 @@ const tabs = ['preview', 'code']
 const tab = ref('preview')
 
 const changeTab = (name: string) => {
-    tab.value = name
+    if (link.value) {
+        window.open(link.value, '_blank')?.focus();
+    } else {   
+        tab.value = name
+    }
 }
 const props = defineProps<{
     title: string
     category?: string
     content?: string
+    inferLink?: boolean
 }>()
 
 const { copy, copied, } = useClipboard({ source: props.content, copiedDuring: 3000 },)
@@ -77,5 +82,11 @@ const slots = defineSlots<{
     preview: () => VNode,
     code: () => VNode
 }>()
+
+const link = computed(() => {
+    if (props.inferLink) {
+        return `https://github.com/Front-End-Coders-Mauritius/nuxt-workshop-devcon2024-preparations/blob/main/components/Icon/${props.title}.vue`
+    } else return null
+})
 
 </script>

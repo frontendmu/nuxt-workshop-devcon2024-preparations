@@ -14,6 +14,122 @@ const step9Template = ref(
     <pre>{{ outage }}</pre>  
   </li> 
 </ul>`)
+
+const step11IndexTemplate = ref(
+`<ul class="grid gap-y-12 max-w-screen-md mx-auto">
+  <li v-for="(outage, index) in today" :key="index">
+    <Outage :outage="outage" />
+  </li>
+</ul>`
+)
+
+const step11OutageScript = ref(
+  `import { useTimeAgo } from "@vueuse/core"
+
+// todo: move to types.ts (?)
+enum District {
+  blackriver,
+  flacq,
+  grandport,
+  moka,
+  pamplemousses,
+  plainewilhems,
+  portlouis,
+  rivieredurempart,
+  savanne,
+  rodrigues,
+}
+
+// todo: move to types.ts (?)
+interface Record {
+  date: string
+  locality: string
+  streets: string
+  district: District
+  from: Date
+  to: Date
+  id: string
+}
+
+type Props = {
+  outage: Record
+}
+
+const props = defineProps<Props>()
+`)
+
+const step11OutageTemplate = ref(
+  ` <div
+    class="flex flex-col justify-between bg-blue-950 text-white p-4 rounded-md w-full"
+  >
+    <div class="flex justify-between w-full">
+      <div class="text-xl font-bold">{{ props.outage.locality }}</div>
+      <div class="w-6">
+        <!-- todo: have the candle <IconCandle /> -->
+        🕯️
+      </div>
+    </div>
+
+    <div class="flex justify-between items-end">
+      <div class="space-y-2">
+        <p class="font-light max-w-3xl">
+          {{ props.outage.streets }}
+        </p>
+        <div class="text-sm">
+          {{ props.outage.date }}
+        </div>
+      </div>
+    </div>
+  </div>`
+)
+
+const step12OutageScript = ref(
+  `...
+const state = computed(() => {
+  let on = "upcoming"
+
+  const from = new Date(props.outage.from)
+  const to = new Date(props.outage.to)
+
+  const now = new Date()
+
+  if (now.getTime() > from.getTime()) {
+    on = "ongoing"
+  }
+
+  if (now.getTime() > to.getTime()) {
+    on = "past"
+  }
+
+  return on
+})
+
+const outageMessage = computed(() => {
+  if (state.value === "ongoing") {
+    return "will resume in"
+  } else if (state.value === "upcoming") {
+    return "will cut in"
+  } else {
+    return "has resumed"
+  }
+})`)
+
+const step12BeforeTemplate  = ref(
+  `<div class="text-sm"> {{ props.outage.date }} </div> </div>`
+)
+
+const step12OutageTemplate = ref(
+  `<div class="inline md:block">Power {{ outageMessage }}</div>
+<div
+  class="inline md:block"
+  v-if="!['ongoing', 'upcoming'].includes(state)"
+>
+  {{ useTimeAgo(outage.from, { showSecond: true }) }}
+</div>
+<div class="inline md:block" v-else>
+  {{ useTimeAgo(outage.from) }}
+</div>
+`)
 </script>
 
 <template>
@@ -163,12 +279,35 @@ async function fetchJson(url = API_ENDPOINT) {
           <h2>Let's pass data into the cards as props</h2>
           <p>Here we will learn <a href="https://vuejs.org/guide/components/props.html">about props</a> and how to pass them</p>
           <p>We will pass the `Street Name, District, Date From, Date To` into the card and customize the content to show our data </p>
+
+<pre>
+// index.vue In the template tag
+<code v-text="step11IndexTemplate"></code>
+</pre>
+<pre>
+// components/Outage.vue Create the script tag (setup lang="ts")
+<code v-text="step11OutageScript"></code>
+</pre>
+<pre>
+// components/Outage.vue Update the template
+<code v-text="step11OutageTemplate"></code>
+</pre>
         </li>
         
         <!-- Step 13 - Let's add an indicator if power is off already or not -->
         <li>
           <h2>Let's add some logic to check if power is off already or not</h2>
           <p></p>
+<pre>
+// components/Outage.vue Apend to the script tag contents
+<code v-text="step12OutageScript"></code>
+</pre>
+<pre>
+// components/Outage.vue Apend to the template tag contents 
+// after <span v-text="step12BeforeTemplate" />
+
+<code v-text="step12OutageTemplate"></code>
+</pre>
         </li>
 
         <!-- Show some examples of on/off indicators -->
